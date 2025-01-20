@@ -1,7 +1,7 @@
-/*SELECT numerofattura,
+SELECT numerofattura,
 iva
 FROM fatture
-where iva = 22*/
+where iva = 22
 
 /*SELECT fatture.numerofattura, clienti.numerocliente
 FROM fatture
@@ -42,9 +42,9 @@ HAVING COUNT(tipologia) > 2*/
 
 /*SELECT regioneresidenza, COUNT(*) AS numeroDiclienti
 FROM clienti
-GROUP BY regioneresidenza;+/
+GROUP BY regioneresidenza;*/
 
-SELECT clienti.anno_di_nascita, fatture.numerofattura, COUNT(fatture.importofattura) > 50
+SELECT clienti.anno_di_nascita, fatture.numerofattura, COUNT(fatture.importo) > 50
 FROM clienti
 INNER JOIN fatture ON clienti.numerocliente = fatture.numerofattura
-WHERE EXTRACT(YEAR FROM anno_di_nascita) = 1980
+EXTRACT(YEAR FROM anno_di_nascita) = 1980
